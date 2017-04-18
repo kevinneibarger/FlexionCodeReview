@@ -18,16 +18,20 @@ public class DetermineTriangles {
 
 		Scanner sc = new Scanner(System.in);
 		Double[] dimensions = new Double[3];
-
+		
 		System.out.println("Please Enter the Length of each side of a Triangle below: ");
-		System.out.print("Side 1 (Hit Return After Entering): ");
-		dimensions[0] = sc.nextDouble();
-		System.out.print("Side 2 (Hit Return After Entering): ");
-		dimensions[1] = sc.nextDouble();
-		System.out.print("Side 3 (Hit Return After Entering): ");
-		dimensions[2] = sc.nextDouble();
-
-		System.out.println(determineTriangleType(dimensions));
+		try {
+			System.out.print("Side 1 (Hit Return After Entering): ");
+			dimensions[0] = sc.nextDouble();
+			System.out.print("Side 2 (Hit Return After Entering): ");
+			dimensions[1] = sc.nextDouble();
+			System.out.print("Side 3 (Hit Return After Entering): ");
+			dimensions[2] = sc.nextDouble();
+	
+			System.out.println(determineTriangleType(dimensions));
+		} catch (InputMismatchException ex) {
+			System.out.println("One or more entries were not numbers, please re-try");
+		}
 		sc.close();
 
 	}
